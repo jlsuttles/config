@@ -1,7 +1,7 @@
 # Jessica Lynn Suttles's Config
 Inspired by [Ehren Murdick's Config](http://github.com/ehrenmurdick/config)
 
-## Backup Your Dot Files:
+## Backup your dot files:
 
 Running 'rake install:*' may force remove:
 

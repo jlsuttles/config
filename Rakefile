@@ -31,7 +31,14 @@ end
 
 def install(*files)
   files.each do |file|
-    filename = file.match(/(.*).example$/) ? $1 : file
+    if file.match(/(.*).example$/)
+      src = "#{File.expand_path(".")}/#{file}"
+      dest = "#{File.expand_path(".")}/#{$1}"
+
+      cp src, dest
+      file = $1
+    end
+    
     src = "#{File.expand_path(".")}/#{file}"
     dest = "#{ENV["HOME"]}/.#{filename}"
 
