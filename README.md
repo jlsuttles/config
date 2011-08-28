@@ -1,11 +1,26 @@
 # Jessica Lynn Suttles's Config
 Inspired by [Ehren Murdick's Config](http://github.com/ehrenmurdick/config)
 
+## Backup Your Dot Files:
+
+Running 'rake install:*' may force remove:
+
+* ~/.ackrc
+* ~/.gitconfig
+* ~/.gitignore
+* ~/.irbrc
+* ~/.railsrc
+* ~/.vim
+* ~/.vimrc
+* ~/.gvimrc
+* ~/.zsh
+* ~/.zshrc
+
 ## Install everything:
 
 * `rake install:all`
 
-## Or specific stuff:
+## Or be specific:
 
 * `rake install:ack`
 * `rake install:git`

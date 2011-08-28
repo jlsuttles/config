@@ -9,7 +9,7 @@ namespace :install do
 
   desc "install git config"
   task :git do
-    install("gitconfig", "gitignore")
+    install("gitconfig.example", "gitignore")
   end
 
   desc "install irb config"
@@ -24,17 +24,18 @@ namespace :install do
 
   desc "install zsh config"
   task :zsh do
-    install("zshrc", "zsh")
+    install("zsh", "zshrc")
     mkdir_p "#{ENV["HOME"]}/bin/config"
   end
 end
 
 def install(*files)
   files.each do |file|
+    filename = file.match(/(.*).example$/) ? $1 : file
     src = "#{File.expand_path(".")}/#{file}"
-    dest = "#{ENV["HOME"]}/.#{file}"
+    dest = "#{ENV["HOME"]}/.#{filename}"
 
-    rm_rf dest
+    rm_rf dest if File.exists?(dest)
     ln_s src, dest
   end
 end
