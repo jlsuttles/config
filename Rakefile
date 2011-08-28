@@ -40,7 +40,7 @@ def install(*files)
     end
     
     src = "#{File.expand_path(".")}/#{file}"
-    dest = "#{ENV["HOME"]}/.#{filename}"
+    dest = "#{ENV["HOME"]}/.#{file}"
 
     rm_rf dest if File.exists?(dest)
     ln_s src, dest
