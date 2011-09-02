@@ -18,7 +18,7 @@ alias easy_off='sudo kextunload -v /System/Library/Extensions/EasyTetherUSBEther
 
 alias c='bundle exec cucumber'
 alias s='bundle exec rspec'
-alias redis= 'redis-server > /Users/jlsuttles/redis.log &'
+alias redis= 'redis-server > ~/redis.log &'
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | 
    cut -d\   -f2"
 
