@@ -1,4 +1,5 @@
 # My aliases
+alias git="hub"
 alias ss='./script/server'
 alias sc='./script/console'
 alias pull="git pull"
