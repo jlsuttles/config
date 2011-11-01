@@ -6,6 +6,7 @@ Inspired by [Ehren Murdick's Config](http://github.com/ehrenmurdick/config)
 Running 'rake install:*' may force remove:
 
 * ~/.ackrc
+* ~/.gemrc
 * ~/.gitconfig
 * ~/.gitignore
 * ~/.irbrc
@@ -23,6 +24,7 @@ Running 'rake install:*' may force remove:
 ## Or be specific:
 
 * `rake install:ack`
+* `rake install:gem`
 * `rake install:git`
 * `rake install:irb`
 * `rake install:vim`

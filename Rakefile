@@ -1,10 +1,15 @@
 namespace :install do
   desc "install everything"
-  task :all => ["install:ack", "install:git", "install:irb", "install:vim", "install:zsh"]
+  task :all => ["install:ack", "install:gem", "install:git", "install:irb", "install:vim", "install:zsh"]
 
   desc "install ack config"
   task :ack do
     install("ackrc")
+  end
+
+  desc "install gem config"
+  task :gem do
+    install("gemrc")
   end
 
   desc "install git config"
