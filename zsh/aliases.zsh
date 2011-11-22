@@ -23,6 +23,11 @@ alias redis= 'redis-server > ~/redis.log &'
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | 
    cut -d\   -f2"
 
+# postgres stop/start
+
+alias pgstart="pg_ctl -D /usr/local/var/postgres -l logfile start"
+alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+
 # reloads passenger and pow
 function reload! () {
   touch tmp/restart.txt
