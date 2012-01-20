@@ -1,32 +1,69 @@
 # My aliases
-alias git="hub"
-alias ss='./script/server'
-alias sc='./script/console'
-alias pull="git pull"
-alias ci="git commit"
-alias st="git st"
-alias fetch="git fetch"
-alias "log"="git log"
-alias push="git push"
-alias add="git add"
+
+# my ip
+
+alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 |
+   cut -d\   -f2"
+
+# ctags
+
 alias tag="ctags -R config -R app -R lib -R script -R spec"
 alias tag!="ctags -R ."
-alias fx='git fetch && gitx'
-alias giff='git diff | gitx'
-alias gitx='gitx --all'
 
-alias easy_off='sudo kextunload -v /System/Library/Extensions/EasyTetherUSBEthernet.kext'
+# mvim
 
-alias c='bundle exec cucumber'
-alias s='bundle exec rspec'
-alias redis= 'redis-server > ~/redis.log &'
-alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | 
-   cut -d\   -f2"
+alias m="mvim"
+alias tabe="mvim"
+
+# git
+
+alias git="hub"
+
+alias ga="git add"
+alias gacm="git add; git commit -m"
+alias gc="git commit"
+alias gca="git commit --amend"
+alias gcm="git commit -m"
+alias gcpc="git cherrypick"
+alias gd="git diff"
+alias gf="git fetch"
+alias gl="git log"
+alias gpull="git pull"
+alias gpush="git push"
+alias grc="git rebase --continue"
+alias gs="git status"
+
+# heorku
+
+alias heroky="heroku"
+alias h="heroku"
+alias hl="heroku logs --tail"
+alias hla="heroku logs --tail --app"
+alias hr="heroku run"
+alias hrc="heroku run console"
+alias hrca="heroku run console --app"
+alias hrrdbm="heroku run rake db:migrate"
+alias hrrdbma="heroku run rake db:migrate --app"
 
 # postgres stop/start
 
 alias pgstart="pg_ctl -D /usr/local/var/postgres -l logfile start"
 alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
+alias pgrebuild="pgstop; pgstart; rake db:drop db:create db:migrate db:seed"
+
+# mysql start/stop
+
+alias mysqlstart="mysql.server start"
+alias mysqlstop="mysql.server stop"
+
+# redis and resque start
+
+alias redisstart='redis-server > ~/redis.log &'
+alias resquestart='QUEUE=* rake resque:work'
+
+# easy tether sucks
+
+alias easyoff='sudo kextunload -v /System/Library/Extensions/EasyTetherUSBEthernet.kext'
 
 # reloads passenger and pow
 function reload! () {
@@ -39,9 +76,9 @@ function trash () {
 }
 
 # cd to the default working directory set by current_working_project
-function cdefault { 
+function cdefault {
   export wdir=`cat $HOME/bin/config/current_project_path`
-  cd $wdir 
+  cd $wdir
 }
 
 function current_working_project {
