@@ -2,8 +2,7 @@
 
 # my ip
 
-alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 |
-   cut -d\   -f2"
+alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
 
 # ctags
 
@@ -20,17 +19,28 @@ alias tabe="mvim"
 alias git="hub"
 
 alias ga="git add"
-alias gacm="git add; git commit -m"
+alias gacm="git add .; git commit -m"
+alias gb="git branch"
+alias gbr="git branch -r"
 alias gc="git commit"
 alias gca="git commit --amend"
 alias gcm="git commit -m"
+alias gco="git checkout"
+alias gcob="git checkout -b"
+alias gcod="git checkout develop"
+alias gcom="git checkout master"
 alias gcpc="git cherrypick"
 alias gd="git diff"
 alias gf="git fetch"
 alias gl="git log"
+alias gpp="git pull; git push"
 alias gpull="git pull"
 alias gpush="git push"
-alias grc="git rebase --continue"
+alias gpushp="git push; git push production master:master"
+alias gpushs="git push; git push staging develop:master"
+alias grs="git reset"
+alias grbc="git rebase --continue"
+alias grbi="git rebase -i"
 alias gs="git status"
 
 # heorku
