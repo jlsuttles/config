@@ -43,7 +43,7 @@ alias grbc="git rebase --continue"
 alias grbi="git rebase -i"
 alias gs="git status"
 
-# heorku
+# heroky
 
 alias heroky="heroku"
 alias h="heroku"
