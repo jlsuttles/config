@@ -33,15 +33,19 @@ alias gcp="git cherrypick"
 alias gd="git diff"
 alias gf="git fetch"
 alias gl="git log"
-alias gpp="git pull; git push"
+alias gpp="git pull && git push"
 alias gpull="git pull"
 alias gpush="git push"
-alias gpushp="git push; git push production master:master"
-alias gpushs="git push; git push staging develop:master"
+alias gpushp="git pull && git push && git push production master:master"
+alias gpushs="git pull && git push && git push staging develop:master"
 alias grs="git reset"
 alias grbc="git rebase --continue"
 alias grbi="git rebase -i"
 alias gs="git status"
+
+# rails
+
+alias tfld="tail -f log/development.log"
 
 # heroky
 
@@ -57,14 +61,18 @@ alias hrrdbma="heroku run rake db:migrate --app"
 
 # postgres stop/start
 
-alias pgstart="pg_ctl -D /usr/local/var/postgres -l logfile start"
-alias pgstop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
-alias pgrebuild="pgstop; pgstart; rake db:drop db:create db:migrate db:seed"
+alias pgstart="launchctl load -F ~/Library/LaunchAgents/org.postgresql.postgres.plist"
+alias pgstop="launchctl unload ~/Library/LaunchAgents/org.postgresql.postgres.plist"
 
 # mysql start/stop
 
-alias mysqlstart="mysql.server start"
-alias mysqlstop="mysql.server stop"
+alias mysqlstart="launchctl load -F ~/Library/LaunchAgents/com.mysql.mysqld.plist"
+alias mysqlstop="launchctl unload ~/Library/LaunchAgents/com.mysql.mysqld.plist"
+
+# mongodb start
+
+alias mongostart="launchctl load -F ~/Library/LaunchAgents/org.mongodb.mongod.plist"
+alias mongostop="launchctl unload ~/Library/LaunchAgents/org.mongodb.mongod.plist"
 
 # redis and resque start
 
