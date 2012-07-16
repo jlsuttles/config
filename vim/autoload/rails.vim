@@ -1837,7 +1837,7 @@ function! s:RailsFind()
   let res = s:findamethod('belongs_to\|has_one\|composed_of\|validates_associated\|scaffold','app/models/\1.rb')
   if res != ""|return res|endif
 
-  let res = rails#singularize(s:findamethod('has_many\|has_and_belongs_to_many','app/models/\1'))
+  let res = rails#singularize(s:findamethod('has_many\|habt_many\|has_and_belongs_to_many','app/models/\1'))
   if res != ""|return res.".rb"|endif
 
   let res = rails#singularize(s:findamethod('create_table\|change_table\|drop_table\|add_column\|rename_column\|remove_column\|add_index','app/models/\1'))
@@ -3457,7 +3457,7 @@ function! s:BufSyntax()
       endif
       if t =~ '^model$' || t =~ '^model-arb\>'
         syn keyword rubyRailsARMethod default_scope named_scope serialize
-        syn keyword rubyRailsARAssociationMethod belongs_to has_one has_many has_and_belongs_to_many composed_of accepts_nested_attributes_for
+        syn keyword rubyRailsARAssociationMethod belongs_to has_one has_many habt_many has_and_belongs_to_many composed_of accepts_nested_attributes_for
         syn keyword rubyRailsARCallbackMethod before_create before_destroy before_save before_update before_validation before_validation_on_create before_validation_on_update
         syn keyword rubyRailsARCallbackMethod after_create after_destroy after_save after_update after_validation after_validation_on_create after_validation_on_update
         syn keyword rubyRailsARClassMethod attr_accessible attr_protected establish_connection set_inheritance_column set_locking_column set_primary_key set_sequence_name set_table_name
@@ -4107,6 +4107,7 @@ function! s:BufAbbreviations()
       Rabbrev ho(    has_one
       Rabbrev hm(    has_many
       Rabbrev habtm( has_and_belongs_to_many
+      Rabbrev habt(  habt_many
       Rabbrev co(    composed_of
       Rabbrev va(    validates_associated
       Rabbrev vb(    validates_acceptance_of

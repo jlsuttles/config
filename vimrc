@@ -1,12 +1,13 @@
 let g:ruby_operators = 1 " highlight ruby operators like || and &&
 
+set completefunc=syntaxcomplete#Complete
 set autoindent " copy indent from current line for new line
 set autoread
 set backspace=indent,eol,start " make backspace always work
 set directory=/var/tmp//
 set expandtab " use soft tab for tab key
 set gdefault
-set guifont=Inconsolata-dz:h16
+set guifont=Inconsolata-dz:h18
 set hls
 set includeexpr+=substitute(v:fname,'s$','','g')
 set incsearch " turn on incremental search
@@ -51,12 +52,14 @@ runtime macros/matchit.vim
 " end http://items.sjbach.com/319/configuring-vim-right
 "
 
+" toggle fullscreen
+map <D-F> :set invfu
 " ^C to escape
 map  
 " // to no highlight
 map // :nohl
 " revert to default font
-map <D-0> :set guifont=Inconsolata-dz:h16
+map <D-0> :set guifont=Inconsolata-dz:h18
 " shift + left arrow outdents
 map <S-Left> I<BS><BS>
 " shift + right arrow indents

@@ -66,8 +66,8 @@ alias pgstop="launchctl unload ~/Library/LaunchAgents/org.postgresql.postgres.pl
 
 # mysql start/stop
 
-alias mysqlstart="launchctl load -F ~/Library/LaunchAgents/com.mysql.mysqld.plist"
-alias mysqlstop="launchctl unload ~/Library/LaunchAgents/com.mysql.mysqld.plist"
+alias mysqlstart="launchctl load -F ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
+alias mysqlstop="launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist"
 
 # mongodb start
 
@@ -99,10 +99,17 @@ function cdefault {
   cd $wdir
 }
 
+function chpwd () {
+  if [ -f ./.zshrc ]; then
+    source ./.zshrc
+  fi
+}
+
 function current_working_project {
   pwd > ~/bin/config/current_project_path
 }
 cdefault
+chpwd
 
 function :w () {
   echo "Ugh. You're not in vim, and your shits all retarded"

@@ -22,3 +22,8 @@ spec/tmp
 tags
 tmp/*
 vendor/gems/
+public/system
+database.pg.yml
+database.mysql.yml
+vendor/bundle
+.DS_Store

@@ -11,3 +11,6 @@ set guioptions-=T
 set guioptions-=r
 
 colors twilight
+
+set colorcolumn=80
+hi ColorColumn guibg=#000000

@@ -1,5 +1,3 @@
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"
-
 autoload -U compinit && compinit
 autoload -U zmv
 autoload colors && colors
@@ -15,5 +13,7 @@ source ~/.zsh/bindkeys.zsh
 source ~/.zsh/completion_rake.zsh 
 
 source ~/.zsh/secrets.zsh
+
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 ruby -v
