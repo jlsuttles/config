@@ -13,4 +13,4 @@ export EDITOR='mvim -f -c "au VimLeave * !open -a Terminal"' # edit git commit m
 export RUBYOPT='rubygems' # ruby always requires rubygems
 
 # add the MySQL library folder
-export DYLD_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.25a/lib"
+# export DYLD_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.25a/lib"

@@ -14,6 +14,15 @@ source ~/.zsh/completion_rake.zsh
 
 source ~/.zsh/secrets.zsh
 
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+export SSH_ENV=$HOME/.ssh/environment
+
+function start_agent() {
+  /usr/bin/ssh-agent | sed 's/^echo/#echo/' > $SSH_ENV;
+  chmod 600 $SSH_ENV;
+  . $SSH_ENV;
+  /usr/bin/ssh-add;
+}
+
+start_agent
 
 ruby -v

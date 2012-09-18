@@ -6,6 +6,7 @@ export HOME="/Users/jlsuttles"
 
 add /usr/local/bin
 add /usr/local/sbin
-# rbenv
+add /usr/local/share/npm/bin
+
 add $HOME/.rbenv/shims
-add $HOME/.rbenv/bin
+add /usr/local/Cellar/rbenv/0.3.0/bin

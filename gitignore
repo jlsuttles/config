@@ -27,3 +27,5 @@ database.pg.yml
 database.mysql.yml
 vendor/bundle
 .DS_Store
+.rbenv-version
+.bundle
