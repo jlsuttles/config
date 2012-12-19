@@ -26,3 +26,6 @@ function start_agent() {
 start_agent
 
 ruby -v
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"

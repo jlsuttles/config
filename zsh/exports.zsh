@@ -3,7 +3,7 @@ export CDPATH=$PROJECTS:~/ # autocd to projects and home
 
 export CLICOLOR=1 # turns on colors
 export LSCOLORS=gxfxcxdxbxegedabagacad
-export TERM=xterm-color
+export TERM=xterm-256color
 
 export GREP_COLOR='3;33'
 export GREP_OPTIONS='--color=auto' 

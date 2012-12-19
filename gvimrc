@@ -3,8 +3,6 @@
 set transp=5
 set columns=135
 set lines=35
-set cursorline
-set cursorcolumn
 
 set guioptions-=t
 set guioptions-=T
@@ -12,5 +10,4 @@ set guioptions-=r
 
 colors twilight
 
-set colorcolumn=80
 hi ColorColumn guibg=#000000

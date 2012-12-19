@@ -1,12 +1,18 @@
 # My aliases
 
+# Tmux aliases
+
+alias ta="tmux attach-session -t"
+alias tn="tmux new-session -s"
+alias tl="tmux list-sessions"
+
 # my ip
 
 alias myip="ifconfig | grep 'inet ' | grep -v 127.0.0.1 | cut -d\   -f2"
 
 # ctags
 
-alias tag="ctags -R config -R app -R lib -R script -R spec"
+alias tag="ctags -R config -R app -R lib -R spec"
 alias tag!="ctags -R ."
 
 # mvim
@@ -18,15 +24,26 @@ alias tabe="mvim"
 
 alias git="hub"
 
-alias gacm="git add -A; git commit -m"
-alias gd="git diff"
 alias gl="git log"
-alias gpp="git pull && git push"
+alias gd="git diff"
+alias gs="git status"
+alias ga="git add"
+alias gcm="git commit -m"
+alias gacm="git add -A; git commit -m"
 alias gpull="git pull"
 alias gpush="git push"
+alias gpp="git pull && git push"
+
 alias gpushp="git pull && git push && git push production master:master"
 alias gpushs="git pull && git push && git push staging develop:master"
-alias gs="git status"
+
+# budler
+
+alias be="bundle exec"
+
+# rspec
+
+alias spec="bundle exec rspec spec --color --format doc"
 
 # rails
 
@@ -48,6 +65,9 @@ alias hrrdbma="heroku run rake db:migrate --app"
 
 alias pgstart="launchctl load -F ~/Library/LaunchAgents/org.postgresql.postgres.plist"
 alias pgstop="launchctl unload ~/Library/LaunchAgents/org.postgresql.postgres.plist"
+
+alias pg9start="pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start"
+alias pg9stop="pg_ctl -D /usr/local/var/postgres stop -s -m fast"
 
 # mysql start/stop
 
@@ -95,10 +115,6 @@ function current_working_project {
 }
 cdefault
 chpwd
-
-function :w () {
-  echo "Ugh. You're not in vim, and your shits all retarded"
-}
 
 function internet {
   # count 3 packets

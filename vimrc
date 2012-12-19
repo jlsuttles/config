@@ -1,3 +1,20 @@
+" Get off my lawn
+nnoremap <Left> :echoe "Use h"<CR>
+nnoremap <Right> :echoe "Use l"<CR>
+nnoremap <Up> :echoe "Use k"<CR>
+nnoremap <Down> :echoe "Use j"<CR>
+
+set clipboard=unnamed
+set cursorline
+set cursorcolumn
+set colorcolumn=80
+
+" colors
+syntax enable "also at end of file
+set background=dark
+colorscheme solarized
+" let g:solarized_termcolors=256
+
 let g:ruby_operators = 1 " highlight ruby operators like || and &&
 
 set completefunc=syntaxcomplete#Complete
@@ -7,7 +24,7 @@ set backspace=indent,eol,start " make backspace always work
 set directory=/var/tmp//
 set expandtab " use soft tab for tab key
 set gdefault
-set guifont=Inconsolata-dz:h18
+set guifont=Inconsolata-dz:h20
 set hls
 set includeexpr+=substitute(v:fname,'s$','','g')
 set incsearch " turn on incremental search
@@ -52,6 +69,20 @@ runtime macros/matchit.vim
 " end http://items.sjbach.com/319/configuring-vim-right
 "
 
+ " Tabs (from Brendan)
+map <C-l> :tabnext<CR>
+map <C-h> :tabprevious<CR>
+map <C-n> :tabnew<CR>
+
+" Cycle between windows with tab (from Brendan)
+map <Tab> <C-W>w
+
+" navigate between splits
+" map <C-j> <C-W>j
+" map <C-k> <C-W>k
+" map <C-h> <C-W>h
+" map <C-l> <C-W>l
+
 " toggle fullscreen
 map <D-F> :set invfu
 " ^C to escape
@@ -59,7 +90,7 @@ map  
 " // to no highlight
 map // :nohl
 " revert to default font
-map <D-0> :set guifont=Inconsolata-dz:h18
+map <D-0> :set guifont=Inconsolata-dz:h20
 " shift + left arrow outdents
 map <S-Left> I<BS><BS>
 " shift + right arrow indents
@@ -111,24 +142,7 @@ autocmd BufRead,BufNewFile *.rjs     set filetype=ruby
 autocmd BufRead,BufNewFile *.rxml    set filetype=ruby
 autocmd BufRead,BufNewFile *.rsel    set filetype=ruby
 
-hi CursorColumn guibg=#302332
-hi CursorLine   guibg=#302332
-hi Error        guibg=#744A49
-hi IncSearch    gui=underline
-hi IncSearch    guibg=#141321
-hi IncSearch    guifg=#66418C
-hi Pmenu        guibg=#000000
-hi Search       gui=NONE
-hi Search       guibg=#141321
-hi Search       guifg=#66418C
-
 filetype plugin on
 
-" syntax highlighting
+" needs to be at end of file
 syntax on
-
-" Get off my lawn
-nnoremap <Left> :echoe "Use h"<CR>
-nnoremap <Right> :echoe "Use l"<CR>
-nnoremap <Up> :echoe "Use k"<CR>
-nnoremap <Down> :echoe "Use j"<CR>
