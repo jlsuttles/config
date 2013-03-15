@@ -1,5 +1,5 @@
 ruby_version() {
-  v=$(ruby -v | awk '{ printf("%.5s", $2) }')
+  v=$(ruby -v | awk '{ printf($2) }')
   echo -ne "$v"
 }
 
