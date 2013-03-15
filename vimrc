@@ -24,7 +24,7 @@ set backspace=indent,eol,start " make backspace always work
 set directory=/var/tmp//
 set expandtab " use soft tab for tab key
 set gdefault
-set guifont=Inconsolata-dz:h20
+set guifont=Inconsolata-dz:h16
 set hls
 set includeexpr+=substitute(v:fname,'s$','','g')
 set incsearch " turn on incremental search
@@ -90,7 +90,7 @@ map  
 " // to no highlight
 map // :nohl
 " revert to default font
-map <D-0> :set guifont=Inconsolata-dz:h20
+map <D-0> :set guifont=Inconsolata-dz:h16
 " shift + left arrow outdents
 map <S-Left> I<BS><BS>
 " shift + right arrow indents
@@ -138,9 +138,7 @@ inoremap # X#
 
 "turn on autocommands
 autocmd!
-autocmd BufRead,BufNewFile *.rjs     set filetype=ruby
-autocmd BufRead,BufNewFile *.rxml    set filetype=ruby
-autocmd BufRead,BufNewFile *.rsel    set filetype=ruby
+autocmd BufWritePre * :%s/\s\+$//e
 
 filetype plugin on
 
