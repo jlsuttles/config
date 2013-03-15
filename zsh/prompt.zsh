@@ -13,7 +13,7 @@ git_dirty() {
   then
     echo " "
   else
-    if [[ $st == "nothing to commit (working directory clean)" ]]
+    if [[ $st == "nothing to commit, working directory clean" ]]
     then
       echo " "
     else
@@ -60,15 +60,15 @@ set_prompt () {
 }
 
 set_iterm_title() {
-  echo -ne "\e]2;$(pwd)\a" 
+  echo -ne "\e]2;$(pwd)\a"
 }
 
 set_iterm_tab() {
   if [ $TABNAME ]
   then
-    echo -ne "\e]1;$TABNAME\a" 
+    echo -ne "\e]1;$TABNAME\a"
   else
-    echo -ne "\e]1;$(project_name)\a" 
+    echo -ne "\e]1;$(project_name)\a"
   fi
 }
 
