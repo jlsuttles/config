@@ -1,5 +1,9 @@
 # My aliases
 
+# bundler
+
+alias dbundle="ruby -I ~/Projects/jlsuttles/bundler/lib ~/Projects/jlsuttles/bundler/bin/bundle"
+
 # Tmux aliases
 
 alias ta="tmux attach-session -t"
@@ -21,8 +25,6 @@ alias m="mvim"
 alias tabe="mvim"
 
 # git
-
-alias git="hub"
 
 alias gl="git log"
 alias gd="git diff"
@@ -87,6 +89,11 @@ alias resquestart='QUEUE=* bundle exec rake resque:work'
 # easy tether sucks
 
 alias easyoff='sudo kextunload -v /System/Library/Extensions/EasyTetherUSBEthernet.kext'
+
+function herokudestroy () {
+  echo $*
+  heroku destroy $* --confirm $*
+}
 
 # reloads passenger and pow
 function reload! () {
