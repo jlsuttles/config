@@ -10,5 +10,4 @@ export GREP_OPTIONS='--color=auto'
 
 export EDITOR='mvim -f -c "au VimLeave * !open -a Terminal"' # edit git commit messages (among other things) in vim
 
-# add the MySQL library folder
-# export DYLD_LIBRARY_PATH="/usr/local/Cellar/mysql/5.5.25a/lib"
+export GOPATH=~/go
