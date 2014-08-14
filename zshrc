@@ -32,3 +32,6 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 ### To enable shims and autocompletion
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# added by travis gem
+[ -f /Users/jlsuttles/.travis/travis.sh ] && source /Users/jlsuttles/.travis/travis.sh

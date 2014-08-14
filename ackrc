@@ -3,7 +3,6 @@
 --type-add=html=.html.erb,.html.haml,.hbs
 --type-add=js=js.erb,.coffee
 --type-add=css=.scss
---type-add=csv=.csv
 
 --sort-files
 --color

@@ -11,7 +11,7 @@ set colorcolumn=80
 
 " colors
 syntax enable "also at end of file
-set background=dark
+set background=light
 colorscheme solarized
 " let g:solarized_termcolors=256
 
@@ -24,7 +24,7 @@ set backspace=indent,eol,start " make backspace always work
 set directory=/var/tmp//
 set expandtab " use soft tab for tab key
 set gdefault
-set guifont=Inconsolata-dz:h16
+set guifont=Inconsolata-dz:h14
 set hls
 set includeexpr+=substitute(v:fname,'s$','','g')
 set incsearch " turn on incremental search
@@ -90,7 +90,7 @@ map  
 " // to no highlight
 map // :nohl
 " revert to default font
-map <D-0> :set guifont=Inconsolata-dz:h16
+map <D-0> :set guifont=Inconsolata-dz:h14
 " shift + left arrow outdents
 map <S-Left> I<BS><BS>
 " shift + right arrow indents

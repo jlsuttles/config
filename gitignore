@@ -1,5 +1,4 @@
 .powenv
-.env
 logfile
 *.kpf
 *.swo
@@ -11,7 +10,6 @@ gitconfig
 .rvmrc
 .zsh*
 Icon*
-bin/
 config/database.yml
 coverage
 db/*.sqlite3
@@ -19,7 +17,6 @@ dump.rdb
 log/*
 r.rb
 spec/tmp
-tags
 tmp/*
 vendor/gems/
 public/system
