@@ -1,3 +1,39 @@
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" My plugins
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'fatih/vim-go'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'wincent/command-t'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -11,9 +47,9 @@ set colorcolumn=80
 
 " colors
 syntax enable "also at end of file
+set term=xterm-256color
 set background=light
 colorscheme solarized
-" let g:solarized_termcolors=256
 
 let g:ruby_operators = 1 " highlight ruby operators like || and &&
 
@@ -24,7 +60,7 @@ set backspace=indent,eol,start " make backspace always work
 set directory=/var/tmp//
 set expandtab " use soft tab for tab key
 set gdefault
-set guifont=Inconsolata-dz:h14
+set guifont=Inconsolata-dz:h12
 set hls
 set includeexpr+=substitute(v:fname,'s$','','g')
 set incsearch " turn on incremental search
@@ -90,7 +126,7 @@ map  
 " // to no highlight
 map // :nohl
 " revert to default font
-map <D-0> :set guifont=Inconsolata-dz:h14
+map <D-0> :set guifont=Inconsolata-dz:h12
 " shift + left arrow outdents
 map <S-Left> I<BS><BS>
 " shift + right arrow indents
@@ -139,6 +175,7 @@ inoremap # X#
 "turn on autocommands
 autocmd!
 autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 filetype plugin on
 

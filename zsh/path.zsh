@@ -12,4 +12,5 @@ add /usr/local/share/npm/bin
 add $HOME/.rbenv/shims
 add /usr/local/Cellar/rbenv/0.3.0/bin
 
+add $GOROOT/bin
 add $GOPATH/bin

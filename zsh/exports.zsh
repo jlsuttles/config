@@ -10,4 +10,5 @@ export GREP_OPTIONS='--color=auto'
 
 export EDITOR='mvim -f -c "au VimLeave * !open -a Terminal"' # edit git commit messages (among other things) in vim
 
+export GOROOT=/usr/local/go
 export GOPATH=~/go
