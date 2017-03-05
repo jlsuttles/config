@@ -1,3 +1,5 @@
+let mapleader=","
+let g:ack_default_options = " -H --nocolor --nogroup --column"
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -9,15 +11,60 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
-
+"
 " My plugins
+"
+" Ack <3
+Plugin 'mileszs/ack.vim'
+" The best colorscheme
 Plugin 'altercation/vim-colors-solarized'
+" File tree explorer
+Plugin 'scrooloose/nerdtree'
+" Comment out code with gcc / gc
+Plugin 'tpope/vim-commentary'
+" Syntax checker for everything
+Plugin 'scrooloose/syntastic'
+
+" This plugin provides the following mappings which allow you to move between
+" Vim panes and tmux splits seamlessly.
+" <ctrl-h> => Left
+" <ctrl-j> => Down
+" <ctrl-k> => Up
+" <ctrl-l> => Right
+" <ctrl-\> => Previous split
+" https://gist.github.com/mislav/5189704
+Plugin 'christoomey/vim-tmux-navigator'
+"
+" Snippets
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'garbas/vim-snipmate'
+" Optional:
+Plugin 'honza/vim-snippets'
+imap <C-J> <Plug>snipMateNextOrTrigger
+smap <C-J> <Plug>snipMateNextOrTrigger
+
+" Ruby and Rails awesomeness
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
+
+" Golang awesomeness
 Plugin 'fatih/vim-go'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdtree'
-Plugin 'wincent/command-t'
+" A code-completion engine
+Plugin 'Shougo/neocomplete.vim'
+" Tag bar
+Plugin 'majutsushi/tagbar'
+
+" JavaScript syntax and indent
+Plugin 'pangloss/vim-javascript'
+" Plugin 'Valloric/YouCompleteMe'
+Plugin 'marijnh/tern_for_vim'
+
+" Syntax highlighting for handlebars
+Plugin 'mustache/vim-mustache-handlebars'
+
+" Display colors in css files
+Plugin 'ap/vim-css-color'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -34,6 +81,12 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+"folding settings
+set foldmethod=indent   "fold based on indent
+set foldnestmax=10      "deepest fold is 10 levels
+set nofoldenable        "dont fold by default
+set foldlevel=1         "this is just what i use
+
 " Get off my lawn
 nnoremap <Left> :echoe "Use h"<CR>
 nnoremap <Right> :echoe "Use l"<CR>
@@ -48,7 +101,7 @@ set colorcolumn=80
 " colors
 syntax enable "also at end of file
 set term=xterm-256color
-set background=light
+set background=dark
 colorscheme solarized
 
 let g:ruby_operators = 1 " highlight ruby operators like || and &&
@@ -60,7 +113,7 @@ set backspace=indent,eol,start " make backspace always work
 set directory=/var/tmp//
 set expandtab " use soft tab for tab key
 set gdefault
-set guifont=Inconsolata-dz:h12
+set guifont=Fira\ Code:h14
 set hls
 set includeexpr+=substitute(v:fname,'s$','','g')
 set incsearch " turn on incremental search
@@ -126,7 +179,7 @@ map  
 " // to no highlight
 map // :nohl
 " revert to default font
-map <D-0> :set guifont=Inconsolata-dz:h12
+map <D-0> :set guifont=Fira\ Code:h14
 " shift + left arrow outdents
 map <S-Left> I<BS><BS>
 " shift + right arrow indents
@@ -178,6 +231,10 @@ autocmd BufWritePre * :%s/\s\+$//e
 autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 filetype plugin on
+
+" Set the type for the file type and override if file type
+" already has detected
+au BufRead,BufNewFile *.js.es6 set filetype=javascript
 
 " needs to be at end of file
 syntax on
