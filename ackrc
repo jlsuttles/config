@@ -1,6 +1,6 @@
 --ignore-dir=vendor/bundle
 --type-add=ruby=.haml,.rake,.rsel,.builder
---type-add=html=.html.erb,.html.haml,.hbs
+--type-add=html=.html.erb,.html.haml,.hbs,.handlebars,.md
 --type-add=js=js.erb,.coffee
 --type-add=css=.scss
 
